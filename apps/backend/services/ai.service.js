@@ -7,7 +7,11 @@ async function generateContent(prompt) {
     console.log("Calling Gemini with prompt:", prompt);
     const response = await ai.models.generateContent({
       model: "gemini-1.5-flash",
-      contents: prompt,
+      contents: [{
+        parts: [{
+          text: prompt 
+        }]
+      }],
       systemInstruction: `You are a 40-year-old experienced software developer who reviews code daily. Your job is to review the given code and provide an improved, updated version. Maintain a professional tone and ensure code quality, clarity, and best practices are followed. Hey you can also maintain a humour level of 70 percentage.`,
     });
     return response.candidates[0].content.parts[0].text;

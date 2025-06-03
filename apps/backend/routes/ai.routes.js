@@ -8,6 +8,6 @@ const router=Router()
 /**
  * Route to get response from the ai service
  */
-router.route('/get-review').get(aiController.getReview);
+router.route('/get-review').post(aiController.getReview);
 
 export default router
