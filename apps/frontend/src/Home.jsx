@@ -19,7 +19,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
 
 
-  const URL = "http://localhost:5000/ai/get-review";
+  const URL = "https://backend-k8ra.onrender.com/ai/get-review";
 
   async function get_review() {
     try {
